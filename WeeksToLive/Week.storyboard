@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Week View Controller-->
+        <scene sceneID="k5c-TK-Cia">
+            <objects>
+                <viewController storyboardIdentifier="weekViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5nl-7Y-0iq" customClass="WeekViewController" customModule="WeeksToLive" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z87-pc-5AQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="23h-d2-PCw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QCR-C2-mDs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gi8-fq-541" userLabel="NoteView">
+                                <rect key="frame" x="67" y="140" width="240" height="386"/>
+                                <color key="backgroundColor" red="0.49411764705882355" green="0.46274509803921571" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.72156862749999995" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Gi8-fq-541" firstAttribute="leading" secondItem="QCR-C2-mDs" secondAttribute="leadingMargin" constant="51" id="4St-EE-Rf6"/>
+                            <constraint firstItem="23h-d2-PCw" firstAttribute="top" secondItem="Gi8-fq-541" secondAttribute="bottom" constant="141" id="lLj-ct-QTh"/>
+                            <constraint firstItem="Gi8-fq-541" firstAttribute="top" secondItem="Z87-pc-5AQ" secondAttribute="bottom" constant="120" id="nbp-rU-3CL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Gi8-fq-541" secondAttribute="trailing" constant="52" id="v2K-kM-oUX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="noteView" destination="Gi8-fq-541" id="ACe-23-fFF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AId-kA-GAR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-95.200000000000003" y="98.50074962518741"/>
+        </scene>
+    </scenes>
+</document>

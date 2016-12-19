@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		633D1A7E1E05CA6900DF0D29 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633D1A7D1E05CA6900DF0D29 /* NetworkManager.swift */; };
 		637E6AAF1E044ADF00F0D8A2 /* WeeksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637E6AAE1E044ADF00F0D8A2 /* WeeksViewController.swift */; };
 		637E6AB11E044F9B00F0D8A2 /* WeekCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637E6AB01E044F9B00F0D8A2 /* WeekCollectionViewCell.swift */; };
 		637E6AB51E04574100F0D8A2 /* baseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637E6AB41E04574100F0D8A2 /* baseView.swift */; };
@@ -16,6 +17,7 @@
 		637E6ABF1E04627900F0D8A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 637E6ABE1E04627900F0D8A2 /* Main.storyboard */; };
 		637E6AC31E0467A000F0D8A2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637E6AC21E0467A000F0D8A2 /* Constants.swift */; };
 		637E6AC51E046A2500F0D8A2 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637E6AC41E046A2500F0D8A2 /* DateManager.swift */; };
+		637E6AC81E046DE200F0D8A2 /* Week.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 637E6AC71E046DE200F0D8A2 /* Week.storyboard */; };
 		63C6FC681E036E0500D764A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C6FC671E036E0500D764A9 /* AppDelegate.swift */; };
 		63C6FC701E036E0500D764A9 /* WeeksToLive.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63C6FC6E1E036E0500D764A9 /* WeeksToLive.xcdatamodeld */; };
 		63C6FC721E036E0500D764A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63C6FC711E036E0500D764A9 /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 		63C6FC991E036EB400D764A9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63C6FC981E036EB400D764A9 /* GoogleService-Info.plist */; };
 		63C6FC9A1E036EB400D764A9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63C6FC981E036EB400D764A9 /* GoogleService-Info.plist */; };
 		63C6FC9B1E036EB400D764A9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63C6FC981E036EB400D764A9 /* GoogleService-Info.plist */; };
+		63CC990E1E08409D0069F9A9 /* ZoomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CC990D1E08409D0069F9A9 /* ZoomTransition.swift */; };
+		63D665E21E0471C7005F1AD8 /* WeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D665E11E0471C7005F1AD8 /* WeekViewController.swift */; };
 		C96E900739BD787F3E17EA48 /* Pods_WeeksToLive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3DE9C07C320F92E696360D /* Pods_WeeksToLive.framework */; };
 		D0A2DB265A31BE414B1EF17D /* Pods_WeeksToLiveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70731B432E1C1F0C55D89F85 /* Pods_WeeksToLiveUITests.framework */; };
 		F66A6AF7CF73F75E2E38C3F3 /* Pods_WeeksToLiveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A7B4FFE65C78C30D0B992A /* Pods_WeeksToLiveTests.framework */; };
@@ -52,6 +56,7 @@
 		19923B33D203088D037B3E15 /* Pods-WeeksToLiveTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeeksToLiveTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeeksToLiveTests/Pods-WeeksToLiveTests.release.xcconfig"; sourceTree = "<group>"; };
 		282A4DF96467BD695FEEB8E8 /* Pods-WeeksToLiveUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeeksToLiveUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeeksToLiveUITests/Pods-WeeksToLiveUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		30A7B4FFE65C78C30D0B992A /* Pods_WeeksToLiveTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeeksToLiveTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		633D1A7D1E05CA6900DF0D29 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		637E6AAE1E044ADF00F0D8A2 /* WeeksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeksViewController.swift; sourceTree = "<group>"; };
 		637E6AB01E044F9B00F0D8A2 /* WeekCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekCollectionViewCell.swift; sourceTree = "<group>"; };
 		637E6AB41E04574100F0D8A2 /* baseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = baseView.swift; sourceTree = "<group>"; };
@@ -61,6 +66,7 @@
 		637E6ABE1E04627900F0D8A2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		637E6AC21E0467A000F0D8A2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		637E6AC41E046A2500F0D8A2 /* DateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
+		637E6AC71E046DE200F0D8A2 /* Week.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Week.storyboard; sourceTree = "<group>"; };
 		63C6FC641E036E0500D764A9 /* WeeksToLive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeeksToLive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C6FC671E036E0500D764A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63C6FC6F1E036E0500D764A9 /* WeeksToLive.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeeksToLive.xcdatamodel; sourceTree = "<group>"; };
@@ -74,6 +80,8 @@
 		63C6FC8A1E036E0500D764A9 /* WeeksToLiveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeksToLiveUITests.swift; sourceTree = "<group>"; };
 		63C6FC8C1E036E0500D764A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63C6FC981E036EB400D764A9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		63CC990D1E08409D0069F9A9 /* ZoomTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomTransition.swift; sourceTree = "<group>"; };
+		63D665E11E0471C7005F1AD8 /* WeekViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekViewController.swift; sourceTree = "<group>"; };
 		70731B432E1C1F0C55D89F85 /* Pods_WeeksToLiveUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeeksToLiveUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7078D9EA8672CAA8F80566CA /* Pods-WeeksToLiveTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeeksToLiveTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeeksToLiveTests/Pods-WeeksToLiveTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7D599C632A4E789B3C205CBD /* Pods-WeeksToLiveUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeeksToLiveUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeeksToLiveUITests/Pods-WeeksToLiveUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -122,12 +130,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		633D1A7C1E05C9FC00DF0D29 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				637E6AC41E046A2500F0D8A2 /* DateManager.swift */,
+				633D1A7D1E05CA6900DF0D29 /* NetworkManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
 		637E6AB81E04588F00F0D8A2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				637E6AB61E0457F700F0D8A2 /* UIColor+Weeks.swift */,
 				637E6ABA1E045A9F00F0D8A2 /* UIFont+Weeks.swift */,
 				637E6ABC1E045B1A00F0D8A2 /* Century Gothic */,
+				63CC990D1E08409D0069F9A9 /* ZoomTransition.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -138,7 +156,8 @@
 				637E6ABE1E04627900F0D8A2 /* Main.storyboard */,
 				637E6AAE1E044ADF00F0D8A2 /* WeeksViewController.swift */,
 				637E6AB01E044F9B00F0D8A2 /* WeekCollectionViewCell.swift */,
-				637E6AC41E046A2500F0D8A2 /* DateManager.swift */,
+				637E6AC71E046DE200F0D8A2 /* Week.storyboard */,
+				63D665E11E0471C7005F1AD8 /* WeekViewController.swift */,
 			);
 			name = Weeks;
 			sourceTree = "<group>";
@@ -183,6 +202,7 @@
 			children = (
 				637E6AC61E046A2E00F0D8A2 /* App Files */,
 				637E6AB91E04589800F0D8A2 /* Weeks */,
+				633D1A7C1E05C9FC00DF0D29 /* Managers */,
 				637E6AB81E04588F00F0D8A2 /* Extensions */,
 				637E6AB41E04574100F0D8A2 /* baseView.swift */,
 				637E6AC21E0467A000F0D8A2 /* Constants.swift */,
@@ -341,6 +361,7 @@
 				637E6ABF1E04627900F0D8A2 /* Main.storyboard in Resources */,
 				63C6FC991E036EB400D764A9 /* GoogleService-Info.plist in Resources */,
 				637E6ABD1E045B1A00F0D8A2 /* Century Gothic in Resources */,
+				637E6AC81E046DE200F0D8A2 /* Week.storyboard in Resources */,
 				63C6FC721E036E0500D764A9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,11 +531,14 @@
 				637E6AAF1E044ADF00F0D8A2 /* WeeksViewController.swift in Sources */,
 				637E6AB71E0457F700F0D8A2 /* UIColor+Weeks.swift in Sources */,
 				637E6ABB1E045A9F00F0D8A2 /* UIFont+Weeks.swift in Sources */,
+				633D1A7E1E05CA6900DF0D29 /* NetworkManager.swift in Sources */,
 				637E6AB11E044F9B00F0D8A2 /* WeekCollectionViewCell.swift in Sources */,
 				63C6FC681E036E0500D764A9 /* AppDelegate.swift in Sources */,
 				637E6AB51E04574100F0D8A2 /* baseView.swift in Sources */,
 				637E6AC51E046A2500F0D8A2 /* DateManager.swift in Sources */,
+				63D665E21E0471C7005F1AD8 /* WeekViewController.swift in Sources */,
 				637E6AC31E0467A000F0D8A2 /* Constants.swift in Sources */,
+				63CC990E1E08409D0069F9A9 /* ZoomTransition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

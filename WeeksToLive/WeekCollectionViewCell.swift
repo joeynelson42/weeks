@@ -31,6 +31,7 @@ class WeekCollectionViewCell: UICollectionViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        self.updateConstraints()
     }
     
     override func updateConstraints() {
