@@ -6,8 +6,6 @@ target 'WeeksToLive' do
   use_frameworks!
 
   # Pods for WeeksToLive
-	
-pod 'Firebase/Core'
 
   target 'WeeksToLiveTests' do
     inherit! :search_paths
