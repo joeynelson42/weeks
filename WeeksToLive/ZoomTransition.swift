@@ -89,7 +89,11 @@ open class ZoomTransition: UIPercentDrivenInteractiveTransition, UIViewControlle
         if let imageView = fromView as? UIImageView {
             transitionView = UIImageView(image: imageView.image)
         } else {
-            transitionView = fromView?.snapshotView(afterScreenUpdates: false)
+            let view = UIView()
+            view.backgroundColor = UIColor.moody()
+            view.layer.cornerRadius = 4
+            transitionView = view
+//            transitionView = fromView?.snapshotView(afterScreenUpdates: false)
         }
         
         if let view = transitionView {
@@ -107,12 +111,10 @@ open class ZoomTransition: UIPercentDrivenInteractiveTransition, UIViewControlle
         if isPresenting {
             backgroundTranslationX = ((screenWidth / 2) - fromView!.frame.origin.x)
             backgroundTranslationY = ((screenHeight / 2) - fromView!.frame(forAlignmentRect: fromView!.superview!.frame).origin.y) / 2
-            
             backgroundScale = (toView!.frame.width / fromView!.frame.width) * 0.75
         } else {
             backgroundTranslationX = ((screenWidth / 2) - toView!.frame.origin.x)
             backgroundTranslationY = ((screenHeight / 2) - toView!.frame(forAlignmentRect: toView!.superview!.frame).origin.y) / 2
-            
             backgroundScale = fromView!.frame.width / toView!.frame.width * 0.75
         }
         

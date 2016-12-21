@@ -14,6 +14,8 @@ class WeekViewController: UIViewController, ZoomTransitionProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        noteView.backgroundColor = UIColor.moody()
+        noteView.layer.cornerRadius = 4
         noteView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
     }
     
