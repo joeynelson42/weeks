@@ -16,7 +16,7 @@ class WeeksViewController: UIViewController, ZoomTransitionProtocol {
     @IBOutlet weak var toggleTimeButton: UIButton!
     
     var selectedIndexPath: IndexPath?
-    var animationController : ZoomTransition?;
+    var animationController : ZoomTransition?
     
     var cellBaseSize: CGFloat = 30
     var cellSize: CGFloat = 30 {

@@ -54,7 +54,11 @@ struct NetworkManager {
      */
     func getCountries(completion: @escaping ([String]) -> Void) {
         get(url: "http://api.population.io:80/1.0/countries", completion: { json in
-            print(json)
+            if let countries = json["countries"] as? [String] {
+                completion(countries)
+            } else {
+                completion([])
+            }
         })
     }
 }

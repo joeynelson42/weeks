@@ -7,6 +7,8 @@ target 'WeeksToLive' do
 
   # Pods for WeeksToLive
 
+pod 'RAMReel'
+
   target 'WeeksToLiveTests' do
     inherit! :search_paths
     # Pods for testing

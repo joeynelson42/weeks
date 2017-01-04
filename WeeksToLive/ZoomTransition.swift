@@ -1,10 +1,5 @@
-//
-//  ZoomTransition.swift
-//  Transitions
-//
-//  Created by Tristan Himmelman on 2014-09-30.
-//  Copyright (c) 2014 him. All rights reserved.
-//
+
+//  Modified version of Tristan Himmelman's ZoomTransition
 
 import Foundation
 import UIKit
@@ -85,15 +80,29 @@ open class ZoomTransition: UIPercentDrivenInteractiveTransition, UIViewControlle
         fromFrame = container.convert(fromView!.bounds, from: fromView)
         toFrame = container.convert(toView!.bounds, from: toView)
         
-        // Create a copy of the fromView and add it to the Transition Container
-        if let imageView = fromView as? UIImageView {
-            transitionView = UIImageView(image: imageView.image)
+        if isPresenting {
+            let cellView = UIView()
+            if let _ = fromView {
+                cellView.backgroundColor = fromView!.backgroundColor
+                cellView.layer.cornerRadius = fromView!.layer.cornerRadius
+                cellView.layer.borderColor = fromView!.layer.borderColor
+                cellView.layer.borderWidth = fromView!.layer.borderWidth
+                
+                toView?.backgroundColor = fromView!.backgroundColor
+                toView?.layer.borderColor = fromView!.layer.borderColor
+            }
+            
+            transitionView = cellView
         } else {
-            let view = UIView()
-            view.backgroundColor = UIColor.moody()
-            view.layer.cornerRadius = 4
-            transitionView = view
-//            transitionView = fromView?.snapshotView(afterScreenUpdates: false)
+            let noteView = UIView()
+            if let _ = fromView {
+                noteView.backgroundColor = fromView!.backgroundColor
+                noteView.layer.cornerRadius = fromView!.layer.cornerRadius
+                noteView.layer.borderColor = fromView!.layer.borderColor
+                noteView.layer.borderWidth = fromView!.layer.borderWidth
+            }
+            
+            transitionView = noteView
         }
         
         if let view = transitionView {
@@ -109,13 +118,15 @@ open class ZoomTransition: UIPercentDrivenInteractiveTransition, UIViewControlle
         let screenHeight = UIScreen.main.bounds.height
         
         if isPresenting {
-            backgroundTranslationX = ((screenWidth / 2) - fromView!.frame.origin.x)
-            backgroundTranslationY = ((screenHeight / 2) - fromView!.frame(forAlignmentRect: fromView!.superview!.frame).origin.y) / 2
-            backgroundScale = (toView!.frame.width / fromView!.frame.width) * 0.75
+//            backgroundTranslationX = ((screenWidth / 2) - fromView!.frame.origin.x)
+//            backgroundTranslationY = ((screenHeight / 2) - fromView!.frame(forAlignmentRect: fromView!.superview!.frame).origin.y) / 2
+//            backgroundScale = (toView!.frame.width / fromView!.frame.width) * 0.75
+//            backgroundScale = 6.0
         } else {
-            backgroundTranslationX = ((screenWidth / 2) - toView!.frame.origin.x)
-            backgroundTranslationY = ((screenHeight / 2) - toView!.frame(forAlignmentRect: toView!.superview!.frame).origin.y) / 2
-            backgroundScale = fromView!.frame.width / toView!.frame.width * 0.75
+//            backgroundTranslationX = ((screenWidth / 2) - toView!.frame.origin.x)
+//            backgroundTranslationY = ((screenHeight / 2) - toView!.frame(forAlignmentRect: toView!.superview!.frame).origin.y) / 2
+//            backgroundScale = fromView!.frame.width / toView!.frame.width * 0.75
+//            backgroundScale = 6.0
         }
         
         if isPresenting {
@@ -129,16 +140,6 @@ open class ZoomTransition: UIPercentDrivenInteractiveTransition, UIViewControlle
     
     func animateZoomInTransition(){
         if allowsInteractiveGesture {
-            // add pinch gesture to new viewcontroller
-            let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(ZoomTransition.handlePinchGesture(_:)))
-            pinchGesture.delegate = self
-            toViewController?.view.addGestureRecognizer(pinchGesture)
-            
-            // add rotation gesture to new viewcontroller
-            let rotationGesture = UIRotationGestureRecognizer(target: self, action: #selector(ZoomTransition.handleRotationGesture(_:)))
-            rotationGesture.delegate = self
-            toViewController?.view.addGestureRecognizer(rotationGesture)
-            
             // add pan gesture to new viewcontroller
             let panGesture = UIPanGestureRecognizer(target: self, action: #selector(ZoomTransition.handlePanGesture(_:)))
             panGesture.delegate = self
@@ -163,7 +164,7 @@ open class ZoomTransition: UIPercentDrivenInteractiveTransition, UIViewControlle
         }) { (finished) -> Void in
             self.transitionView?.removeFromSuperview()
             self.fromViewController?.view.alpha = 1
-            self.fromViewController?.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            self.fromViewController?.view.transform = CGAffineTransform.identity
             self.toView?.isHidden = false
             self.fromView?.alpha = 1
             
@@ -189,7 +190,7 @@ open class ZoomTransition: UIPercentDrivenInteractiveTransition, UIViewControlle
         self.toViewController?.view.transform = CGAffineTransform(scaleX: backgroundScale, y: backgroundScale).translatedBy(x: backgroundTranslationX, y: backgroundTranslationY)
         
         UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: [], animations: { () -> Void in
-            self.toViewController?.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            self.toViewController?.view.transform = CGAffineTransform.identity
             self.fromViewController?.view.alpha = 0
             if (self.interactive == false){
                 self.transitionView?.frame = self.toFrame!
@@ -222,66 +223,43 @@ open class ZoomTransition: UIPercentDrivenInteractiveTransition, UIViewControlle
     
     // MARK: - Gesture Recognizer Handlers
     
-    func handlePinchGesture(_ gesture: UIPinchGestureRecognizer){
-        switch (gesture.state) {
+    func handlePanGesture(_ gesture: UIPanGestureRecognizer){
+        let view = gesture.view!
+
+        let translation = gesture.translation(in: view)
+        
+        switch gesture.state {
         case .began:
             interactive = true
-            
             // begin transition
             self.navigationController.popViewController(animated: true)
-            break
+
         case .changed:
+            transitionView?.center = CGPoint(x:transitionView!.center.x + translation.x, y:transitionView!.center.y + translation.y)
+            gesture.setTranslation(CGPoint.zero, in: view)
             
-            self.transitionView?.transform = self.transitionView!.transform.scaledBy(x: gesture.scale, y: gesture.scale)
-            gesture.scale = 1
+            let diff = transitionView!.center.y - (Constants.screenHeight / 2)
             
-            // calculate current scale of transitionView
-            let scale = self.transitionView!.frame.size.width / self.fromFrame!.size.width
-            
-            // Check if we should complete or restore transition when gesture is ended
+            let scale = 1 - (diff / (Constants.screenHeight * 0.66))
             self.shouldCompleteTransition = (scale < completionThreshold)
+
+            update(1 - scale)
             
-            //println("scale\(1-scale)")
-            update(1-scale)
-            
-            break
-        case .ended, .cancelled:
-            
+        case .cancelled, .ended:
             var animationFrame = toFrame
-            let cancelAnimation = (self.shouldCompleteTransition == false && gesture.velocity >= 0) || gesture.state == UIGestureRecognizerState.cancelled
-            
+            let cancelAnimation = (self.shouldCompleteTransition == false) || gesture.state == UIGestureRecognizerState.cancelled
+
             if (cancelAnimation){
                 animationFrame = fromFrame
+                fromViewController!.view.layoutIfNeeded()
                 cancel()
             } else {
                 finish()
             }
             
-            // calculate current scale of transitionView
-            let finalScale = animationFrame!.width / self.fromFrame!.size.width
-            let currentScale = (transitionView!.frame.size.width / self.fromFrame!.size.width)
-            let delta = finalScale - currentScale
-            var normalizedVelocity = gesture.velocity / delta
-            
-            // add upper and lower bound on normalized velocity
-            normalizedVelocity = normalizedVelocity > 20 ? 20 : normalizedVelocity
-            normalizedVelocity = normalizedVelocity < -20 ? -20 : normalizedVelocity
-            
-            //println("---\nvelocity \(gesture.velocity)")
-            //println("normal \(delta)")
-            //println("velocity normal \(normalizedVelocity)")
-            
-            // no need to normalize the velocity for low velocities
-            if gesture.velocity < 3 && gesture.velocity > -3 {
-                normalizedVelocity = gesture.velocity
-            }
-            
             let duration = transitionDuration(using: transitionContext!)
             
-            UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: normalizedVelocity, options: UIViewAnimationOptions(), animations: { () -> Void in
-                
-                // set a new transform to reset the rotation to 0 but maintain the current scale
-                self.transitionView?.transform = CGAffineTransform(scaleX: currentScale, y: currentScale)
+            UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.0, options: UIViewAnimationOptions(), animations: { () -> Void in
                 
                 if let frame = animationFrame {
                     self.transitionView?.frame = frame
@@ -292,31 +270,8 @@ open class ZoomTransition: UIPercentDrivenInteractiveTransition, UIViewControlle
                 self.zoomOutTransitionComplete()
                 self.interactive = false
             })
-            
-            break
         default:
-            break
-        }
-    }
-    
-    func handleRotationGesture(_ gesture: UIRotationGestureRecognizer){
-        if interactive {
-            if gesture.state == UIGestureRecognizerState.changed {
-                transitionView!.transform = transitionView!.transform.rotated(by: gesture.rotation)
-                gesture.rotation = 0
-            }
-        }
-    }
-    
-    func handlePanGesture(_ gesture: UIPanGestureRecognizer){
-        let view = gesture.view!
-        
-        if interactive {
-            if gesture.state == UIGestureRecognizerState.changed {
-                let translation = gesture.translation(in: view)
-                transitionView?.center = CGPoint(x:transitionView!.center.x + translation.x, y:transitionView!.center.y + translation.y)
-                gesture.setTranslation(CGPoint.zero, in: view)
-            }
+            return
         }
     }
     

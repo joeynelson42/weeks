@@ -18,6 +18,9 @@
 		637E6AC31E0467A000F0D8A2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637E6AC21E0467A000F0D8A2 /* Constants.swift */; };
 		637E6AC51E046A2500F0D8A2 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637E6AC41E046A2500F0D8A2 /* DateManager.swift */; };
 		637E6AC81E046DE200F0D8A2 /* Week.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 637E6AC71E046DE200F0D8A2 /* Week.storyboard */; };
+		638C4D5C1E0AFE120077EC3D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638C4D5B1E0AFE120077EC3D /* OnboardingView.swift */; };
+		638C4D5F1E0B03130077EC3D /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638C4D5E1E0B03130077EC3D /* OnboardingViewController.swift */; };
+		63950BF11E0A1503006A18DB /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63950BF01E0A1503006A18DB /* CloudKit.framework */; };
 		63C6FC681E036E0500D764A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C6FC671E036E0500D764A9 /* AppDelegate.swift */; };
 		63C6FC701E036E0500D764A9 /* WeeksToLive.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63C6FC6E1E036E0500D764A9 /* WeeksToLive.xcdatamodeld */; };
 		63C6FC721E036E0500D764A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63C6FC711E036E0500D764A9 /* Assets.xcassets */; };
@@ -67,6 +70,10 @@
 		637E6AC21E0467A000F0D8A2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		637E6AC41E046A2500F0D8A2 /* DateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		637E6AC71E046DE200F0D8A2 /* Week.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Week.storyboard; sourceTree = "<group>"; };
+		638C4D5B1E0AFE120077EC3D /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		638C4D5E1E0B03130077EC3D /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		63950BEF1E0A1501006A18DB /* WeeksToLive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeeksToLive.entitlements; sourceTree = "<group>"; };
+		63950BF01E0A1503006A18DB /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		63C6FC641E036E0500D764A9 /* WeeksToLive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeeksToLive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C6FC671E036E0500D764A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63C6FC6F1E036E0500D764A9 /* WeeksToLive.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeeksToLive.xcdatamodel; sourceTree = "<group>"; };
@@ -95,6 +102,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C96E900739BD787F3E17EA48 /* Pods_WeeksToLive.framework in Frameworks */,
+				63950BF11E0A1503006A18DB /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,21 +153,18 @@
 				637E6AB61E0457F700F0D8A2 /* UIColor+Weeks.swift */,
 				637E6ABA1E045A9F00F0D8A2 /* UIFont+Weeks.swift */,
 				637E6ABC1E045B1A00F0D8A2 /* Century Gothic */,
-				63CC990D1E08409D0069F9A9 /* ZoomTransition.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
 		};
-		637E6AB91E04589800F0D8A2 /* Weeks */ = {
+		637E6AB91E04589800F0D8A2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				637E6ABE1E04627900F0D8A2 /* Main.storyboard */,
 				637E6AAE1E044ADF00F0D8A2 /* WeeksViewController.swift */,
-				637E6AB01E044F9B00F0D8A2 /* WeekCollectionViewCell.swift */,
-				637E6AC71E046DE200F0D8A2 /* Week.storyboard */,
 				63D665E11E0471C7005F1AD8 /* WeekViewController.swift */,
+				638C4D5E1E0B03130077EC3D /* OnboardingViewController.swift */,
 			);
-			name = Weeks;
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		637E6AC61E046A2E00F0D8A2 /* App Files */ = {
@@ -173,6 +178,18 @@
 				63C6FC981E036EB400D764A9 /* GoogleService-Info.plist */,
 			);
 			name = "App Files";
+			sourceTree = "<group>";
+		};
+		63950BF21E0A182A006A18DB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				637E6ABE1E04627900F0D8A2 /* Main.storyboard */,
+				637E6AB01E044F9B00F0D8A2 /* WeekCollectionViewCell.swift */,
+				637E6AC71E046DE200F0D8A2 /* Week.storyboard */,
+				63CC990D1E08409D0069F9A9 /* ZoomTransition.swift */,
+				638C4D5B1E0AFE120077EC3D /* OnboardingView.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		63C6FC5B1E036E0500D764A9 = {
@@ -200,8 +217,10 @@
 		63C6FC661E036E0500D764A9 /* WeeksToLive */ = {
 			isa = PBXGroup;
 			children = (
+				63950BEF1E0A1501006A18DB /* WeeksToLive.entitlements */,
 				637E6AC61E046A2E00F0D8A2 /* App Files */,
-				637E6AB91E04589800F0D8A2 /* Weeks */,
+				63950BF21E0A182A006A18DB /* View */,
+				637E6AB91E04589800F0D8A2 /* Controller */,
 				633D1A7C1E05C9FC00DF0D29 /* Managers */,
 				637E6AB81E04588F00F0D8A2 /* Extensions */,
 				637E6AB41E04574100F0D8A2 /* baseView.swift */,
@@ -231,6 +250,7 @@
 		E3FCEFF1CDA5158E2A947028 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				63950BF01E0A1503006A18DB /* CloudKit.framework */,
 				0F3DE9C07C320F92E696360D /* Pods_WeeksToLive.framework */,
 				30A7B4FFE65C78C30D0B992A /* Pods_WeeksToLiveTests.framework */,
 				70731B432E1C1F0C55D89F85 /* Pods_WeeksToLiveUITests.framework */,
@@ -317,6 +337,14 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 2RF92UCMKX;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					63C6FC7A1E036E0500D764A9 = {
 						CreatedOnToolsVersion = 8.1;
@@ -538,6 +566,8 @@
 				637E6AC51E046A2500F0D8A2 /* DateManager.swift in Sources */,
 				63D665E21E0471C7005F1AD8 /* WeekViewController.swift in Sources */,
 				637E6AC31E0467A000F0D8A2 /* Constants.swift in Sources */,
+				638C4D5F1E0B03130077EC3D /* OnboardingViewController.swift in Sources */,
+				638C4D5C1E0AFE120077EC3D /* OnboardingView.swift in Sources */,
 				63CC990E1E08409D0069F9A9 /* ZoomTransition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -681,6 +711,7 @@
 			baseConfigurationReference = D08FF1FF285DC9CE61ED0CDA /* Pods-WeeksToLive.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WeeksToLive/WeeksToLive.entitlements;
 				DEVELOPMENT_TEAM = 2RF92UCMKX;
 				INFOPLIST_FILE = WeeksToLive/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -695,6 +726,7 @@
 			baseConfigurationReference = ABDED1B1746F780FC81688EF /* Pods-WeeksToLive.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WeeksToLive/WeeksToLive.entitlements;
 				DEVELOPMENT_TEAM = 2RF92UCMKX;
 				INFOPLIST_FILE = WeeksToLive/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
