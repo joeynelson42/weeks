@@ -34,4 +34,8 @@ struct DateManager {
     private func daysBetween(start: Date, end: Date) -> Int {
         return Calendar.current.dateComponents([.day], from: start, to: end).day!
     }
+    
+    func totalWeeksSince(date: Date) -> Int {
+        return Calendar.current.dateComponents([.weekOfYear], from: date, to: Date()).weekOfYear!
+    }
 }

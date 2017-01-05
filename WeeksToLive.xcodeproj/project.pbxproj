@@ -25,6 +25,7 @@
 		638A90ED1E1DAF07002404FD /* OutlineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638A90EC1E1DAF07002404FD /* OutlineButton.swift */; };
 		638A90F01E1DB533002404FD /* OnboardKeyboardAccessory.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638A90EF1E1DB533002404FD /* OnboardKeyboardAccessory.xib */; };
 		638A90F21E1DB5C5002404FD /* OnboardKeyboardAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638A90F11E1DB5C5002404FD /* OnboardKeyboardAccessory.swift */; };
+		638A912E1E1ECF28002404FD /* FadeOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638A912D1E1ECF28002404FD /* FadeOut.swift */; };
 		638C4D5C1E0AFE120077EC3D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638C4D5B1E0AFE120077EC3D /* OnboardingView.swift */; };
 		638C4D5F1E0B03130077EC3D /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638C4D5E1E0B03130077EC3D /* OnboardingViewController.swift */; };
 		63950BF11E0A1503006A18DB /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63950BF01E0A1503006A18DB /* CloudKit.framework */; };
@@ -84,6 +85,7 @@
 		638A90EC1E1DAF07002404FD /* OutlineButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlineButton.swift; sourceTree = "<group>"; };
 		638A90EF1E1DB533002404FD /* OnboardKeyboardAccessory.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardKeyboardAccessory.xib; sourceTree = "<group>"; };
 		638A90F11E1DB5C5002404FD /* OnboardKeyboardAccessory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardKeyboardAccessory.swift; sourceTree = "<group>"; };
+		638A912D1E1ECF28002404FD /* FadeOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeOut.swift; sourceTree = "<group>"; };
 		638C4D5B1E0AFE120077EC3D /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		638C4D5E1E0B03130077EC3D /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		63950BEF1E0A1501006A18DB /* WeeksToLive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeeksToLive.entitlements; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 		637E6AB81E04588F00F0D8A2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				63CC990D1E08409D0069F9A9 /* ZoomTransition.swift */,
 				638A90EA1E1DAA60002404FD /* APConstraints.swift */,
 				637E6AB61E0457F700F0D8A2 /* UIColor+Weeks.swift */,
 				637E6ABA1E045A9F00F0D8A2 /* UIFont+Weeks.swift */,
@@ -208,13 +211,20 @@
 			name = Subviews;
 			sourceTree = "<group>";
 		};
+		638A912F1E1ECF2D002404FD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				638A912D1E1ECF28002404FD /* FadeOut.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		63950BF21E0A182A006A18DB /* View */ = {
 			isa = PBXGroup;
 			children = (
 				637E6ABE1E04627900F0D8A2 /* Main.storyboard */,
 				637E6AB01E044F9B00F0D8A2 /* WeekCollectionViewCell.swift */,
 				637E6AC71E046DE200F0D8A2 /* Week.storyboard */,
-				63CC990D1E08409D0069F9A9 /* ZoomTransition.swift */,
 				638C4D5B1E0AFE120077EC3D /* OnboardingView.swift */,
 				638A90EE1E1DB513002404FD /* Subviews */,
 			);
@@ -254,6 +264,7 @@
 				637E6AB81E04588F00F0D8A2 /* Extensions */,
 				637E6AB41E04574100F0D8A2 /* baseView.swift */,
 				637E6AC21E0467A000F0D8A2 /* Constants.swift */,
+				638A912F1E1ECF2D002404FD /* Protocols */,
 			);
 			path = WeeksToLive;
 			sourceTree = "<group>";
@@ -597,6 +608,7 @@
 				638A90EB1E1DAA60002404FD /* APConstraints.swift in Sources */,
 				63C6FC681E036E0500D764A9 /* AppDelegate.swift in Sources */,
 				637E6AB51E04574100F0D8A2 /* baseView.swift in Sources */,
+				638A912E1E1ECF28002404FD /* FadeOut.swift in Sources */,
 				637E6AC51E046A2500F0D8A2 /* DateManager.swift in Sources */,
 				63D665E21E0471C7005F1AD8 /* WeekViewController.swift in Sources */,
 				637E6AC31E0467A000F0D8A2 /* Constants.swift in Sources */,

@@ -9,8 +9,8 @@
 import UIKit
 
 protocol OnboardArrowDelegate {
-    func didTapLeftArrow()
-    func didTapRightArrow()
+    func didTapLeftArrow(arrow: OnboardArrow)
+    func didTapRightArrow(arrow: OnboardArrow)
 }
 
 class OnboardArrow: UIView {
@@ -83,12 +83,12 @@ class OnboardArrow: UIView {
     }
     
     @IBAction func rightArrowAction(_ sender: Any) {
-        self.delegate?.didTapRightArrow()
+        self.delegate?.didTapRightArrow(arrow: self)
         flipRightToLeft()
     }
     
     @IBAction func leftArrowAction(_ sender: Any) {
-        self.delegate?.didTapLeftArrow()
+        self.delegate?.didTapLeftArrow(arrow: self)
         flipLeftToRight()
     }
     

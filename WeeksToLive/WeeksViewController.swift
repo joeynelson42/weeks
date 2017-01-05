@@ -117,7 +117,6 @@ extension WeeksViewController: UICollectionViewDelegate, UICollectionViewDataSou
         selectedIndexPath = indexPath
         let noteVC = UIStoryboard(name: "Week", bundle: nil).instantiateViewController(withIdentifier: "weekViewController") as! WeekViewController
         self.navigationController?.pushViewController(noteVC, animated: true)
-//        RunLoop.main.add(zoomTimer, forMode: .defaultRunLoopMode)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -163,7 +163,7 @@
         <!--Navigation Controller-->
         <scene sceneID="ZxI-OK-Fr7">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="jQ4-7V-bSm" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="WeeksNavVC" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="jQ4-7V-bSm" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lpn-N4-WYg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

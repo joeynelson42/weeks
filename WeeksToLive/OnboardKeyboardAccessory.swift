@@ -11,4 +11,6 @@ import UIKit
 class OnboardKeyboardAccessory: UIView {
     
     @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var leftArrow: UIButton!
+    @IBOutlet weak var rightArrow: UIButton!
 }
