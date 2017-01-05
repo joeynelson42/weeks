@@ -45,12 +45,11 @@ class WeekCollectionViewCell: UICollectionViewCell {
     }
     
     private func configureSubviews(){
-        backgroundColor = .clear
         layer.borderWidth = 3.0
         
         noteIndicator.layer.cornerRadius = 3.0
         noteIndicator.backgroundColor = .white
-        
+
         addSubview(progressView)
         addSubview(noteIndicator)
         

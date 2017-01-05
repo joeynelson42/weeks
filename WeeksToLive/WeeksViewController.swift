@@ -8,6 +8,11 @@
 
 import UIKit
 
+enum LayoutState {
+    case grid
+    case detail
+}
+
 class WeeksViewController: UIViewController, ZoomTransitionProtocol {
     
     //MARK: Properties
@@ -18,22 +23,11 @@ class WeeksViewController: UIViewController, ZoomTransitionProtocol {
     var selectedIndexPath: IndexPath?
     var animationController : ZoomTransition?
     
-    var cellBaseSize: CGFloat = 30
-    var cellSize: CGFloat = 30 {
-        didSet {
-            if cellSize < cellMinSize {
-                cellSize = cellMinSize
-            } else if cellSize > cellMaxSize {
-                cellSize = cellMaxSize
-                collection.isPagingEnabled = true
-            }
-        }
-    }
+    var layout = LayoutState.grid
+    var gridLayout: UICollectionViewFlowLayout!
+    var detailLayout: UICollectionViewFlowLayout!
     
-    let cellMaxSize: CGFloat = Constants.screenWidth - 20
-    var cellMinSize: CGFloat = 13.5
-    
-    var zoomTimer = Timer()
+    var cellSize: CGFloat = 50
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,39 +38,29 @@ class WeeksViewController: UIViewController, ZoomTransitionProtocol {
         }
         self.navigationController?.delegate = animationController
         
-        zoomTimer = Timer(timeInterval: 0.001, target: self, selector: #selector(zoomIntoView), userInfo: nil, repeats: true)
-        
-        let _ = NetworkManager().getLifeExpectancy(gender: "male", country: "West Bank and Gaza", dob: "1991-04-23", completion: { result in
-            print(result)
-        })
-        
         toggleTimeButton.isHidden = true
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
     }
     
     func configureView() {
         collection.showsVerticalScrollIndicator = false
+
+        detailLayout = UICollectionViewFlowLayout()
+        detailLayout.scrollDirection = .horizontal
+        detailLayout.itemSize = CGSize(width: Constants.screenWidth - 100, height: Constants.screenHeight - 300)
+        detailLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        detailLayout.minimumLineSpacing = 0
+        
+        
+        gridLayout = UICollectionViewFlowLayout()
+        gridLayout.scrollDirection = .vertical
+        gridLayout.itemSize = CGSize(width: cellSize, height: cellSize)
+        gridLayout.minimumLineSpacing = 10
+        gridLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
     
     @IBAction func sliderValueChanged(_ sender: UISlider) {
         let offsetValue = timeSlider.value * (Float(collection.contentSize.height - collection.frame.height))
         collection.contentOffset.y = CGFloat(offsetValue)
-    }
-    
-    @IBAction func pinchAction(_ sender: UIPinchGestureRecognizer) {
-        print(sender.scale)
-        cellSize = sender.scale * cellBaseSize
-
-        collection.reloadData()
-        
-        print(collection.contentSize.height)
-        
-        if sender.state == .ended {
-            
-        }
     }
     
     func viewForTransition() -> UIView {
@@ -94,7 +78,7 @@ extension WeeksViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6000
+        return 4500
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -102,7 +86,6 @@ extension WeeksViewController: UICollectionViewDelegate, UICollectionViewDataSou
         
         cell.layer.borderColor = UIColor.moody().cgColor
         cell.noteIndicator.alpha = 0.0
-        
         if indexPath.row == 500 {
             cell.backgroundColor = .white
             selectedIndexPath = indexPath
@@ -115,29 +98,25 @@ extension WeeksViewController: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIndexPath = indexPath
-        let noteVC = UIStoryboard(name: "Week", bundle: nil).instantiateViewController(withIdentifier: "weekViewController") as! WeekViewController
-        self.navigationController?.pushViewController(noteVC, animated: true)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        if cellSize == cellMaxSize {
-            return CGSize(width: cellSize, height: collection.frame.height - cellSize * 0.66)
+        if layout == .grid {
+            collectionView.setCollectionViewLayout(detailLayout, animated: true)
+            layout = .detail
+            collectionView.isPagingEnabled = true
         } else {
-            return CGSize(width: cellSize, height: cellSize)
+            collectionView.setCollectionViewLayout(gridLayout, animated: true)
+            layout = .grid
+            collectionView.isPagingEnabled = false
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return cellSize * 0.66
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return cellSize * 0.66
-    }
-    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        timeSlider.value = Float(scrollView.contentOffset.y) / Float(scrollView.contentSize.height - collection.frame.height)
+        if layout == .grid {
+            timeSlider.value = Float(scrollView.contentOffset.y) / Float(scrollView.contentSize.height - collection.frame.height)
+        } else {
+            timeSlider.value = Float(scrollView.contentOffset.x) / Float(scrollView.contentSize.width - collection.frame.width)
+        }
+        
     }
     
     func zoomIntoView() {

@@ -112,23 +112,6 @@ open class ZoomTransition: UIPercentDrivenInteractiveTransition, UIViewControlle
             container.addSubview(view)
         }
         
-        // Calculate the background scale
-        
-        let screenWidth = UIScreen.main.bounds.width
-        let screenHeight = UIScreen.main.bounds.height
-        
-        if isPresenting {
-//            backgroundTranslationX = ((screenWidth / 2) - fromView!.frame.origin.x)
-//            backgroundTranslationY = ((screenHeight / 2) - fromView!.frame(forAlignmentRect: fromView!.superview!.frame).origin.y) / 2
-//            backgroundScale = (toView!.frame.width / fromView!.frame.width) * 0.75
-//            backgroundScale = 6.0
-        } else {
-//            backgroundTranslationX = ((screenWidth / 2) - toView!.frame.origin.x)
-//            backgroundTranslationY = ((screenHeight / 2) - toView!.frame(forAlignmentRect: toView!.superview!.frame).origin.y) / 2
-//            backgroundScale = fromView!.frame.width / toView!.frame.width * 0.75
-//            backgroundScale = 6.0
-        }
-        
         if isPresenting {
             animateZoomInTransition()
         } else {
@@ -139,12 +122,12 @@ open class ZoomTransition: UIPercentDrivenInteractiveTransition, UIViewControlle
     // MARK: - Zoom animations
     
     func animateZoomInTransition(){
-        if allowsInteractiveGesture {
-            // add pan gesture to new viewcontroller
-            let panGesture = UIPanGestureRecognizer(target: self, action: #selector(ZoomTransition.handlePanGesture(_:)))
-            panGesture.delegate = self
-            toViewController?.view.addGestureRecognizer(panGesture)
-        }
+//        if allowsInteractiveGesture {
+//            // add pan gesture to new viewcontroller
+//            let panGesture = UIPanGestureRecognizer(target: self, action: #selector(ZoomTransition.handlePanGesture(_:)))
+//            panGesture.delegate = self
+//            toViewController?.view.addGestureRecognizer(panGesture)
+//        }
         
         toViewController?.view.alpha = 0
         toView?.isHidden = true

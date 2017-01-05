@@ -10,6 +10,7 @@ import UIKit
 
 class WeekViewController: UIViewController, ZoomTransitionProtocol {
     
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var noteView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,27 @@ class WeekViewController: UIViewController, ZoomTransitionProtocol {
     }
     
     func viewForTransition() -> UIView {
-        return noteView
+        return collectionView
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        view.bringSubview(toFront: collectionView)
+    }
+}
+
+extension WeekViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 100
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailCell", for: indexPath)
+        cell.backgroundColor = .green
+        return cell
     }
 }

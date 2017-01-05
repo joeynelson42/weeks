@@ -25,7 +25,7 @@
 		638A90ED1E1DAF07002404FD /* OutlineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638A90EC1E1DAF07002404FD /* OutlineButton.swift */; };
 		638A90F01E1DB533002404FD /* OnboardKeyboardAccessory.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638A90EF1E1DB533002404FD /* OnboardKeyboardAccessory.xib */; };
 		638A90F21E1DB5C5002404FD /* OnboardKeyboardAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638A90F11E1DB5C5002404FD /* OnboardKeyboardAccessory.swift */; };
-		638A912E1E1ECF28002404FD /* FadeOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638A912D1E1ECF28002404FD /* FadeOut.swift */; };
+		638A91311E1ED994002404FD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638A91301E1ED994002404FD /* User.swift */; };
 		638C4D5C1E0AFE120077EC3D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638C4D5B1E0AFE120077EC3D /* OnboardingView.swift */; };
 		638C4D5F1E0B03130077EC3D /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638C4D5E1E0B03130077EC3D /* OnboardingViewController.swift */; };
 		63950BF11E0A1503006A18DB /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63950BF01E0A1503006A18DB /* CloudKit.framework */; };
@@ -85,7 +85,7 @@
 		638A90EC1E1DAF07002404FD /* OutlineButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlineButton.swift; sourceTree = "<group>"; };
 		638A90EF1E1DB533002404FD /* OnboardKeyboardAccessory.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardKeyboardAccessory.xib; sourceTree = "<group>"; };
 		638A90F11E1DB5C5002404FD /* OnboardKeyboardAccessory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardKeyboardAccessory.swift; sourceTree = "<group>"; };
-		638A912D1E1ECF28002404FD /* FadeOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeOut.swift; sourceTree = "<group>"; };
+		638A91301E1ED994002404FD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		638C4D5B1E0AFE120077EC3D /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		638C4D5E1E0B03130077EC3D /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		63950BEF1E0A1501006A18DB /* WeeksToLive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeeksToLive.entitlements; sourceTree = "<group>"; };
@@ -194,6 +194,7 @@
 				63C6FC761E036E0500D764A9 /* Info.plist */,
 				63C6FC6E1E036E0500D764A9 /* WeeksToLive.xcdatamodeld */,
 				63C6FC981E036EB400D764A9 /* GoogleService-Info.plist */,
+				637E6AC21E0467A000F0D8A2 /* Constants.swift */,
 			);
 			name = "App Files";
 			sourceTree = "<group>";
@@ -211,17 +212,18 @@
 			name = Subviews;
 			sourceTree = "<group>";
 		};
-		638A912F1E1ECF2D002404FD /* Protocols */ = {
+		638A91321E1EDA64002404FD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				638A912D1E1ECF28002404FD /* FadeOut.swift */,
+				638A91301E1ED994002404FD /* User.swift */,
 			);
-			name = Protocols;
+			name = Model;
 			sourceTree = "<group>";
 		};
 		63950BF21E0A182A006A18DB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				637E6AB41E04574100F0D8A2 /* baseView.swift */,
 				637E6ABE1E04627900F0D8A2 /* Main.storyboard */,
 				637E6AB01E044F9B00F0D8A2 /* WeekCollectionViewCell.swift */,
 				637E6AC71E046DE200F0D8A2 /* Week.storyboard */,
@@ -258,13 +260,11 @@
 			children = (
 				63950BEF1E0A1501006A18DB /* WeeksToLive.entitlements */,
 				637E6AC61E046A2E00F0D8A2 /* App Files */,
+				638A91321E1EDA64002404FD /* Model */,
 				63950BF21E0A182A006A18DB /* View */,
 				637E6AB91E04589800F0D8A2 /* Controller */,
 				633D1A7C1E05C9FC00DF0D29 /* Managers */,
 				637E6AB81E04588F00F0D8A2 /* Extensions */,
-				637E6AB41E04574100F0D8A2 /* baseView.swift */,
-				637E6AC21E0467A000F0D8A2 /* Constants.swift */,
-				638A912F1E1ECF2D002404FD /* Protocols */,
 			);
 			path = WeeksToLive;
 			sourceTree = "<group>";
@@ -370,7 +370,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = NelsonJE;
 				TargetAttributes = {
 					63C6FC631E036E0500D764A9 = {
@@ -608,7 +608,6 @@
 				638A90EB1E1DAA60002404FD /* APConstraints.swift in Sources */,
 				63C6FC681E036E0500D764A9 /* AppDelegate.swift in Sources */,
 				637E6AB51E04574100F0D8A2 /* baseView.swift in Sources */,
-				638A912E1E1ECF28002404FD /* FadeOut.swift in Sources */,
 				637E6AC51E046A2500F0D8A2 /* DateManager.swift in Sources */,
 				63D665E21E0471C7005F1AD8 /* WeekViewController.swift in Sources */,
 				637E6AC31E0467A000F0D8A2 /* Constants.swift in Sources */,
@@ -617,6 +616,7 @@
 				638C4D5F1E0B03130077EC3D /* OnboardingViewController.swift in Sources */,
 				638C4D5C1E0AFE120077EC3D /* OnboardingView.swift in Sources */,
 				63CC990E1E08409D0069F9A9 /* ZoomTransition.swift in Sources */,
+				638A91311E1ED994002404FD /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,6 +681,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -730,6 +731,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -758,6 +760,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D08FF1FF285DC9CE61ED0CDA /* Pods-WeeksToLive.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WeeksToLive/WeeksToLive.entitlements;
 				DEVELOPMENT_TEAM = 2RF92UCMKX;
@@ -773,6 +776,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ABDED1B1746F780FC81688EF /* Pods-WeeksToLive.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WeeksToLive/WeeksToLive.entitlements;
 				DEVELOPMENT_TEAM = 2RF92UCMKX;
