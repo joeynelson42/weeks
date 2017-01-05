@@ -18,6 +18,13 @@
 		637E6AC31E0467A000F0D8A2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637E6AC21E0467A000F0D8A2 /* Constants.swift */; };
 		637E6AC51E046A2500F0D8A2 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637E6AC41E046A2500F0D8A2 /* DateManager.swift */; };
 		637E6AC81E046DE200F0D8A2 /* Week.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 637E6AC71E046DE200F0D8A2 /* Week.storyboard */; };
+		638A90E51E1D9AB0002404FD /* OnboardArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638A90E41E1D9AB0002404FD /* OnboardArrow.swift */; };
+		638A90E71E1DA449002404FD /* OnboardRightArrow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638A90E61E1DA449002404FD /* OnboardRightArrow.xib */; };
+		638A90E91E1DA455002404FD /* OnboardLeftArrow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638A90E81E1DA455002404FD /* OnboardLeftArrow.xib */; };
+		638A90EB1E1DAA60002404FD /* APConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638A90EA1E1DAA60002404FD /* APConstraints.swift */; };
+		638A90ED1E1DAF07002404FD /* OutlineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638A90EC1E1DAF07002404FD /* OutlineButton.swift */; };
+		638A90F01E1DB533002404FD /* OnboardKeyboardAccessory.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638A90EF1E1DB533002404FD /* OnboardKeyboardAccessory.xib */; };
+		638A90F21E1DB5C5002404FD /* OnboardKeyboardAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638A90F11E1DB5C5002404FD /* OnboardKeyboardAccessory.swift */; };
 		638C4D5C1E0AFE120077EC3D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638C4D5B1E0AFE120077EC3D /* OnboardingView.swift */; };
 		638C4D5F1E0B03130077EC3D /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638C4D5E1E0B03130077EC3D /* OnboardingViewController.swift */; };
 		63950BF11E0A1503006A18DB /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63950BF01E0A1503006A18DB /* CloudKit.framework */; };
@@ -70,6 +77,13 @@
 		637E6AC21E0467A000F0D8A2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		637E6AC41E046A2500F0D8A2 /* DateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		637E6AC71E046DE200F0D8A2 /* Week.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Week.storyboard; sourceTree = "<group>"; };
+		638A90E41E1D9AB0002404FD /* OnboardArrow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardArrow.swift; sourceTree = "<group>"; };
+		638A90E61E1DA449002404FD /* OnboardRightArrow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardRightArrow.xib; sourceTree = "<group>"; };
+		638A90E81E1DA455002404FD /* OnboardLeftArrow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardLeftArrow.xib; sourceTree = "<group>"; };
+		638A90EA1E1DAA60002404FD /* APConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APConstraints.swift; sourceTree = "<group>"; };
+		638A90EC1E1DAF07002404FD /* OutlineButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlineButton.swift; sourceTree = "<group>"; };
+		638A90EF1E1DB533002404FD /* OnboardKeyboardAccessory.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardKeyboardAccessory.xib; sourceTree = "<group>"; };
+		638A90F11E1DB5C5002404FD /* OnboardKeyboardAccessory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardKeyboardAccessory.swift; sourceTree = "<group>"; };
 		638C4D5B1E0AFE120077EC3D /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		638C4D5E1E0B03130077EC3D /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		63950BEF1E0A1501006A18DB /* WeeksToLive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeeksToLive.entitlements; sourceTree = "<group>"; };
@@ -150,6 +164,7 @@
 		637E6AB81E04588F00F0D8A2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				638A90EA1E1DAA60002404FD /* APConstraints.swift */,
 				637E6AB61E0457F700F0D8A2 /* UIColor+Weeks.swift */,
 				637E6ABA1E045A9F00F0D8A2 /* UIFont+Weeks.swift */,
 				637E6ABC1E045B1A00F0D8A2 /* Century Gothic */,
@@ -180,6 +195,19 @@
 			name = "App Files";
 			sourceTree = "<group>";
 		};
+		638A90EE1E1DB513002404FD /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				638A90E61E1DA449002404FD /* OnboardRightArrow.xib */,
+				638A90E81E1DA455002404FD /* OnboardLeftArrow.xib */,
+				638A90E41E1D9AB0002404FD /* OnboardArrow.swift */,
+				638A90EC1E1DAF07002404FD /* OutlineButton.swift */,
+				638A90EF1E1DB533002404FD /* OnboardKeyboardAccessory.xib */,
+				638A90F11E1DB5C5002404FD /* OnboardKeyboardAccessory.swift */,
+			);
+			name = Subviews;
+			sourceTree = "<group>";
+		};
 		63950BF21E0A182A006A18DB /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +216,7 @@
 				637E6AC71E046DE200F0D8A2 /* Week.storyboard */,
 				63CC990D1E08409D0069F9A9 /* ZoomTransition.swift */,
 				638C4D5B1E0AFE120077EC3D /* OnboardingView.swift */,
+				638A90EE1E1DB513002404FD /* Subviews */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -385,8 +414,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				638A90E91E1DA455002404FD /* OnboardLeftArrow.xib in Resources */,
 				63C6FC751E036E0500D764A9 /* LaunchScreen.storyboard in Resources */,
+				638A90E71E1DA449002404FD /* OnboardRightArrow.xib in Resources */,
 				637E6ABF1E04627900F0D8A2 /* Main.storyboard in Resources */,
+				638A90F01E1DB533002404FD /* OnboardKeyboardAccessory.xib in Resources */,
 				63C6FC991E036EB400D764A9 /* GoogleService-Info.plist in Resources */,
 				637E6ABD1E045B1A00F0D8A2 /* Century Gothic in Resources */,
 				637E6AC81E046DE200F0D8A2 /* Week.storyboard in Resources */,
@@ -558,14 +590,18 @@
 				63C6FC701E036E0500D764A9 /* WeeksToLive.xcdatamodeld in Sources */,
 				637E6AAF1E044ADF00F0D8A2 /* WeeksViewController.swift in Sources */,
 				637E6AB71E0457F700F0D8A2 /* UIColor+Weeks.swift in Sources */,
+				638A90E51E1D9AB0002404FD /* OnboardArrow.swift in Sources */,
 				637E6ABB1E045A9F00F0D8A2 /* UIFont+Weeks.swift in Sources */,
 				633D1A7E1E05CA6900DF0D29 /* NetworkManager.swift in Sources */,
 				637E6AB11E044F9B00F0D8A2 /* WeekCollectionViewCell.swift in Sources */,
+				638A90EB1E1DAA60002404FD /* APConstraints.swift in Sources */,
 				63C6FC681E036E0500D764A9 /* AppDelegate.swift in Sources */,
 				637E6AB51E04574100F0D8A2 /* baseView.swift in Sources */,
 				637E6AC51E046A2500F0D8A2 /* DateManager.swift in Sources */,
 				63D665E21E0471C7005F1AD8 /* WeekViewController.swift in Sources */,
 				637E6AC31E0467A000F0D8A2 /* Constants.swift in Sources */,
+				638A90F21E1DB5C5002404FD /* OnboardKeyboardAccessory.swift in Sources */,
+				638A90ED1E1DAF07002404FD /* OutlineButton.swift in Sources */,
 				638C4D5F1E0B03130077EC3D /* OnboardingViewController.swift in Sources */,
 				638C4D5C1E0AFE120077EC3D /* OnboardingView.swift in Sources */,
 				63CC990E1E08409D0069F9A9 /* ZoomTransition.swift in Sources */,
