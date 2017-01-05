@@ -139,12 +139,12 @@ open class ZoomTransition: UIPercentDrivenInteractiveTransition, UIViewControlle
     // MARK: - Zoom animations
     
     func animateZoomInTransition(){
-        if allowsInteractiveGesture {
-            // add pan gesture to new viewcontroller
-            let panGesture = UIPanGestureRecognizer(target: self, action: #selector(ZoomTransition.handlePanGesture(_:)))
-            panGesture.delegate = self
-            toViewController?.view.addGestureRecognizer(panGesture)
-        }
+//        if allowsInteractiveGesture {
+//            // add pan gesture to new viewcontroller
+//            let panGesture = UIPanGestureRecognizer(target: self, action: #selector(ZoomTransition.handlePanGesture(_:)))
+//            panGesture.delegate = self
+//            toViewController?.view.addGestureRecognizer(panGesture)
+//        }
         
         toViewController?.view.alpha = 0
         toView?.isHidden = true
