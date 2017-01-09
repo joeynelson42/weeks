@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jQ4-7V-bSm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jQ4-7V-bSm">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -89,7 +89,6 @@
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="r8b-NM-OWm"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="AuQ-D5-eeN"/>
-                                    <outletCollection property="gestureRecognizers" destination="MAN-k7-yWx" appends="YES" id="12X-qP-h2R"/>
                                 </connections>
                             </collectionView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="eVg-ix-okd" userLabel="TimeSlider">
@@ -144,6 +143,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Lcz-CI-5a2"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="collection" destination="gb5-GB-h1T" id="IXY-O9-j9U"/>
                         <outlet property="timeSlider" destination="eVg-ix-okd" id="k3A-Rg-tas"/>
@@ -151,12 +151,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <pinchGestureRecognizer id="MAN-k7-yWx">
-                    <connections>
-                        <action selector="pinchAction:" destination="BYZ-38-t0r" id="AIC-av-QUO"/>
-                        <outlet property="delegate" destination="BYZ-38-t0r" id="hTL-JC-PKv"/>
-                    </connections>
-                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
@@ -165,7 +159,7 @@
             <objects>
                 <navigationController storyboardIdentifier="WeeksNavVC" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="jQ4-7V-bSm" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lpn-N4-WYg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="lpn-N4-WYg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

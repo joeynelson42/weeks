@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeeksToLive/ZoomTransition.swift"
-            timestampString = "505342765.934494"
+            timestampString = "505350120.626605"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "405"
-            endingLineNumber = "405">
+            startingLineNumber = "403"
+            endingLineNumber = "403">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

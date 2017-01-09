@@ -94,23 +94,23 @@ class OnboardingView: UIView {
         }
         
         dayField.attributedPlaceholder =
-            NSAttributedString(string: "DD", attributes: [NSForegroundColorAttributeName : UIColor.lightGray])
+            NSAttributedString(string: "DD", attributes: [NSForegroundColorAttributeName : UIColor.extraLightGray()])
         monthField.attributedPlaceholder =
-            NSAttributedString(string: "MM", attributes: [NSForegroundColorAttributeName : UIColor.lightGray])
+            NSAttributedString(string: "MM", attributes: [NSForegroundColorAttributeName : UIColor.extraLightGray()])
         yearField.attributedPlaceholder =
-            NSAttributedString(string: "YYYY", attributes: [NSForegroundColorAttributeName : UIColor.lightGray])
+            NSAttributedString(string: "YYYY", attributes: [NSForegroundColorAttributeName : UIColor.extraLightGray()])
         
         maleButton.setTitle(" MALE ", for: .normal)
-        maleButton.setTitleColor(.lightGray, for: .normal)
-        maleButton.setTitleColor(.gray, for: .highlighted)
+        maleButton.setTitleColor(.extraLightGray(), for: .normal)
+        maleButton.setTitleColor(.lightGray, for: .highlighted)
         maleButton.setTitleColor(.white, for: .selected)
         maleButton.titleLabel?.font = UIFont.centuryGothic(fontSize: 40)
         maleButton.outlineWidth = 1.5
         maleButton.contentHorizontalAlignment = .center
         
         femaleButton.setTitle(" FEMALE ", for: .normal)
-        femaleButton.setTitleColor(.lightGray, for: .normal)
-        femaleButton.setTitleColor(.gray, for: .highlighted)
+        femaleButton.setTitleColor(.extraLightGray(), for: .normal)
+        femaleButton.setTitleColor(.lightGray, for: .highlighted)
         femaleButton.setTitleColor(.white, for: .selected)
         femaleButton.titleLabel?.font = UIFont.centuryGothic(fontSize: 40)
         femaleButton.outlineWidth = 1.5

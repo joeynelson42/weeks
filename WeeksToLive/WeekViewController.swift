@@ -10,6 +10,7 @@ import UIKit
 
 class WeekViewController: UIViewController, ZoomTransitionProtocol {
     
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var noteView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,10 +18,18 @@ class WeekViewController: UIViewController, ZoomTransitionProtocol {
         noteView.layer.cornerRadius = 4
         noteView.layer.borderWidth = 3.0
         noteView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+        collectionView.alpha = 0.0
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        collectionView.alpha = 1.0
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        collectionView.alpha = 0.0
     }
     
     func handleTap() {
-        noteView.backgroundColor = .green
         let _ = self.navigationController?.popViewController(animated: true)
     }
     
@@ -39,9 +48,11 @@ extension WeekViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailCell", for: indexPath) as! DetailCollectionCell
         
-        
+        cell.containerView.layer.borderColor = UIColor.moody().cgColor
+        cell.containerView.layer.borderWidth = 3.0
+        cell.containerView.backgroundColor = .mySin()
         
         return cell
     }
@@ -51,6 +62,6 @@ extension WeekViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: Constants.screenWidth, height: Constants.screenHeight - 200)
+        return CGSize(width: Constants.screenWidth, height: noteView.frame.size.height)
     }
 }

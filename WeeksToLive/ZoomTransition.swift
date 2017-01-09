@@ -154,8 +154,6 @@ open class ZoomTransition: UIPercentDrivenInteractiveTransition, UIViewControlle
     
         UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: UIViewAnimationOptions.curveLinear, animations: { () -> Void in
             
-            self.fromViewController?.view.transform = CGAffineTransform(scaleX: self.backgroundScale, y: self.backgroundScale).translatedBy(x: self.backgroundTranslationX, y: self.backgroundTranslationY)
-            
             self.toViewController?.view.alpha = 1
             if (self.interactive == false){
                 self.transitionView?.frame = self.toFrame!

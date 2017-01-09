@@ -40,6 +40,7 @@
 		63C6FC9B1E036EB400D764A9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63C6FC981E036EB400D764A9 /* GoogleService-Info.plist */; };
 		63CC990E1E08409D0069F9A9 /* ZoomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CC990D1E08409D0069F9A9 /* ZoomTransition.swift */; };
 		63D665E21E0471C7005F1AD8 /* WeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D665E11E0471C7005F1AD8 /* WeekViewController.swift */; };
+		63FBC5E71E1F05F6003A50AD /* DetailCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FBC5E61E1F05F6003A50AD /* DetailCollectionCell.swift */; };
 		C96E900739BD787F3E17EA48 /* Pods_WeeksToLive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3DE9C07C320F92E696360D /* Pods_WeeksToLive.framework */; };
 		D0A2DB265A31BE414B1EF17D /* Pods_WeeksToLiveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70731B432E1C1F0C55D89F85 /* Pods_WeeksToLiveUITests.framework */; };
 		F66A6AF7CF73F75E2E38C3F3 /* Pods_WeeksToLiveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A7B4FFE65C78C30D0B992A /* Pods_WeeksToLiveTests.framework */; };
@@ -105,6 +106,7 @@
 		63C6FC981E036EB400D764A9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		63CC990D1E08409D0069F9A9 /* ZoomTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomTransition.swift; sourceTree = "<group>"; };
 		63D665E11E0471C7005F1AD8 /* WeekViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekViewController.swift; sourceTree = "<group>"; };
+		63FBC5E61E1F05F6003A50AD /* DetailCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCollectionCell.swift; sourceTree = "<group>"; };
 		70731B432E1C1F0C55D89F85 /* Pods_WeeksToLiveUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeeksToLiveUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7078D9EA8672CAA8F80566CA /* Pods-WeeksToLiveTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeeksToLiveTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeeksToLiveTests/Pods-WeeksToLiveTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7D599C632A4E789B3C205CBD /* Pods-WeeksToLiveUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeeksToLiveUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeeksToLiveUITests/Pods-WeeksToLiveUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				637E6ABE1E04627900F0D8A2 /* Main.storyboard */,
 				637E6AB01E044F9B00F0D8A2 /* WeekCollectionViewCell.swift */,
 				637E6AC71E046DE200F0D8A2 /* Week.storyboard */,
+				63FBC5E61E1F05F6003A50AD /* DetailCollectionCell.swift */,
 				638C4D5B1E0AFE120077EC3D /* OnboardingView.swift */,
 				638A90EE1E1DB513002404FD /* Subviews */,
 			);
@@ -614,6 +617,7 @@
 				637E6AC31E0467A000F0D8A2 /* Constants.swift in Sources */,
 				638A90F21E1DB5C5002404FD /* OnboardKeyboardAccessory.swift in Sources */,
 				638A90ED1E1DAF07002404FD /* OutlineButton.swift in Sources */,
+				63FBC5E71E1F05F6003A50AD /* DetailCollectionCell.swift in Sources */,
 				638C4D5F1E0B03130077EC3D /* OnboardingViewController.swift in Sources */,
 				638C4D5C1E0AFE120077EC3D /* OnboardingView.swift in Sources */,
 				63CC990E1E08409D0069F9A9 /* ZoomTransition.swift in Sources */,
