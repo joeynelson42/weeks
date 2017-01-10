@@ -8,15 +8,14 @@
 
 import UIKit
 
-class WeeksViewController: UIViewController, ZoomTransitionProtocol {
+class WeeksViewController: UIViewController {
     
     //MARK: Properties
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var timeSlider: UISlider!
     @IBOutlet weak var toggleTimeButton: UIButton!
     
-    var selectedIndexPath: IndexPath?
-    var animationController : ZoomTransition?
+    var totalWeeks = 4500
     
     var cellBaseSize: CGFloat = 30
     var cellSize: CGFloat = 30 {
@@ -39,12 +38,19 @@ class WeeksViewController: UIViewController, ZoomTransitionProtocol {
         super.viewDidLoad()
         configureView()
         
-        if let navigationController = self.navigationController {
-            animationController = ZoomTransition(navigationController: navigationController)
-        }
-        self.navigationController?.delegate = animationController
-        
         toggleTimeButton.isHidden = true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let currentCell = sender as? WeekCollectionViewCell,
+            let vc = segue.destination as? WeekViewController,
+            let currentCellIndex = collection.indexPath(for: currentCell){
+            vc.selectedIndex = currentCellIndex
+        }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     func configureView() {
@@ -54,12 +60,6 @@ class WeeksViewController: UIViewController, ZoomTransitionProtocol {
     @IBAction func sliderValueChanged(_ sender: UISlider) {
         let offsetValue = timeSlider.value * (Float(collection.contentSize.height - collection.frame.height))
         collection.contentOffset.y = CGFloat(offsetValue)
-    }
-    
-    func viewForTransition() -> UIView {
-        guard let index = selectedIndexPath else { return view }
-        guard let cell = collection.cellForItem(at: index) else { return view }
-        return cell
     }
 }
 
@@ -71,38 +71,30 @@ extension WeeksViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6000
+        return totalWeeks
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeekCell", for: indexPath) as! WeekCollectionViewCell
         
-        cell.layer.borderColor = UIColor.moody().cgColor
+        cell.layer.borderColor = UIColor.mySin().cgColor
+        cell.layer.borderWidth = 3.0
         cell.noteIndicator.alpha = 0.0
         
         if indexPath.row == 500 {
             cell.backgroundColor = .white
-            selectedIndexPath = indexPath
         } else {
-            cell.backgroundColor = .mySin()
+            cell.backgroundColor = .jacarta()
         }
+        
+        cell.heroID = "\(indexPath.row)"
+        cell.heroModifiers = [.zPositionIfMatched(3)]
         
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedIndexPath = indexPath
-        let noteVC = UIStoryboard(name: "Week", bundle: nil).instantiateViewController(withIdentifier: "weekViewController") as! WeekViewController
-        self.navigationController?.pushViewController(noteVC, animated: true)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        if cellSize == cellMaxSize {
-            return CGSize(width: cellSize, height: collection.frame.height - cellSize * 0.66)
-        } else {
-            return CGSize(width: cellSize, height: cellSize)
-        }
+        return CGSize(width: cellSize, height: cellSize)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

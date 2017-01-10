@@ -22,6 +22,10 @@ extension UIColor{
         return UIColor.fromHex(rgbValue: 0xECECEC)
     }
     
+    class func jacarta() -> UIColor {
+        return UIColor.fromHex(rgbValue: 0x332E6F)
+    }
+    
     class func mySin() -> UIColor {
         return UIColor.fromHex(rgbValue: 0xFFB828)
     }

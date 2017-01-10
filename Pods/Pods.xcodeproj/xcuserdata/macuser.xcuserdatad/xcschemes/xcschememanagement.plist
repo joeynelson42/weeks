@@ -9,40 +9,10 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-WeeksToLiveTests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-WeeksToLiveUITests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>RAMReel.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>7F6458150B06A34066D1457AE30455B0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A7ECEE1C41DE3FD41ADFE96EA1357798</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C247DB86D3F153D5B8AADDB2E9189099</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CDF7C62BDE23DB0549F774A9A5C85ED7</key>
+		<key>785C22A30542E7EFE761C1A5D9A7954A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

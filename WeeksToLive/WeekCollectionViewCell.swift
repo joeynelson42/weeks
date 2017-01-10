@@ -20,6 +20,7 @@ class WeekCollectionViewCell: UICollectionViewCell {
     var state = WeekState.future
     var progress: CGFloat = 0
     
+    @IBOutlet weak var containerView: UIView!
     let progressView = UIView()
     let noteIndicator = UIView()
     
@@ -44,9 +45,7 @@ class WeekCollectionViewCell: UICollectionViewCell {
         
     }
     
-    private func configureSubviews(){
-        layer.borderWidth = 3.0
-        
+    private func configureSubviews(){        
         noteIndicator.layer.cornerRadius = 3.0
         noteIndicator.backgroundColor = .white
         

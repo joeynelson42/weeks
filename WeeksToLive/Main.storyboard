@@ -62,7 +62,7 @@
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gb5-GB-h1T">
                                 <rect key="frame" x="0.0" y="125" width="375" height="470"/>
-                                <color key="backgroundColor" red="1" green="0.72156862749999995" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.18039215689999999" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="Fb8-G1-MmX">
                                     <size key="itemSize" width="30" height="30"/>
@@ -84,6 +84,9 @@
                                                 <integer key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="9dB-1q-XGu" kind="presentation" id="1cP-c6-vMB"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -120,7 +123,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.72156862745098038" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.20000000000000001" green="0.1803921568627451" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="TDd-St-jer" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3c3-bp-gzH"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Muz-hF-eBY" secondAttribute="bottom" constant="8" id="4tX-Bc-NFo"/>
@@ -144,6 +147,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="Lcz-CI-5a2"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="collection" destination="gb5-GB-h1T" id="IXY-O9-j9U"/>
                         <outlet property="timeSlider" destination="eVg-ix-okd" id="k3A-Rg-tas"/>
@@ -153,6 +159,83 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
+        </scene>
+        <!--Week View Controller-->
+        <scene sceneID="wBB-n5-MpU">
+            <objects>
+                <viewController id="9dB-1q-XGu" customClass="WeekViewController" customModule="WeeksToLive" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vnD-CU-qAs"/>
+                        <viewControllerLayoutGuide type="bottom" id="RmQ-3v-0KZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BAN-NO-daz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VaO-La-kAG">
+                                <rect key="frame" x="0.0" y="95" width="375" height="477"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.18039215689999999" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="bCF-GG-mJi">
+                                    <size key="itemSize" width="375" height="478"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WeekCell" id="PsQ-8c-DVi" customClass="WeekCollectionViewCell" customModule="WeeksToLive" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="-1" width="375" height="478"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="478"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Js-ov-Ebe" userLabel="ContainerView">
+                                                    <rect key="frame" x="50" y="8" width="275" height="462"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.20000000000000001" green="0.18039215689999999" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="0Js-ov-Ebe" secondAttribute="trailing" constant="42" id="LzA-CL-9mz"/>
+                                            <constraint firstItem="0Js-ov-Ebe" firstAttribute="bottom" secondItem="PsQ-8c-DVi" secondAttribute="bottomMargin" id="Sco-iu-5AD"/>
+                                            <constraint firstItem="0Js-ov-Ebe" firstAttribute="leading" secondItem="PsQ-8c-DVi" secondAttribute="leadingMargin" constant="42" id="d3t-va-2pk"/>
+                                            <constraint firstItem="0Js-ov-Ebe" firstAttribute="top" secondItem="PsQ-8c-DVi" secondAttribute="topMargin" id="hco-Z4-pb5"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="containerView" destination="0Js-ov-Ebe" id="vKy-zQ-HHa"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="9dB-1q-XGu" id="Vqh-7Q-DyE"/>
+                                    <outlet property="delegate" destination="9dB-1q-XGu" id="l34-lc-A3M"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20000000000000001" green="0.18039215689999999" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="VaO-La-kAG" firstAttribute="leading" secondItem="BAN-NO-daz" secondAttribute="leadingMargin" constant="-16" id="UE5-ht-V6a"/>
+                            <constraint firstItem="RmQ-3v-0KZ" firstAttribute="top" secondItem="VaO-La-kAG" secondAttribute="bottom" constant="95" id="Y6R-SJ-Dl4"/>
+                            <constraint firstItem="VaO-La-kAG" firstAttribute="top" secondItem="vnD-CU-qAs" secondAttribute="bottom" constant="75" id="aMk-eb-0q5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VaO-La-kAG" secondAttribute="trailing" constant="-16" id="hlm-mZ-5uc"/>
+                        </constraints>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="collectionView" destination="VaO-La-kAG" id="ChQ-3l-nH7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lGw-gK-7gs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1960.8" y="138.98050974512745"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZxI-OK-Fr7">
@@ -164,6 +247,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="YQe-0B-GcP"/>
                     </connections>
