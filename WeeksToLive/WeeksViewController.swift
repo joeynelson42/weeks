@@ -15,30 +15,19 @@ class WeeksViewController: UIViewController {
     @IBOutlet weak var timeSlider: UISlider!
     @IBOutlet weak var toggleTimeButton: UIButton!
     
-    var totalWeeks = 4500
-    
-    var cellBaseSize: CGFloat = 30
-    var cellSize: CGFloat = 30 {
-        didSet {
-            if cellSize < cellMinSize {
-                cellSize = cellMinSize
-            } else if cellSize > cellMaxSize {
-                cellSize = cellMaxSize
-                collection.isPagingEnabled = true
-            }
-        }
-    }
-    
-    let cellMaxSize: CGFloat = Constants.screenWidth - 20
-    var cellMinSize: CGFloat = 13.5
-    
-    var zoomTimer = Timer()
+    var totalWeeks = 4000
+    var cellSize: CGFloat = 30
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
         
+        collection.scrollToItem(at: IndexPath(item: 500, section: 0), at: .centeredVertically, animated: false)
         toggleTimeButton.isHidden = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        updateSlider()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -83,7 +72,10 @@ extension WeeksViewController: UICollectionViewDelegate, UICollectionViewDataSou
         
         if indexPath.row == 500 {
             cell.backgroundColor = .white
-        } else {
+            cell.layer.borderColor = UIColor.white.cgColor
+        } else if indexPath.row < 500{
+            cell.backgroundColor = .mySin()
+        }  else {
             cell.backgroundColor = .jacarta()
         }
         
@@ -93,11 +85,34 @@ extension WeeksViewController: UICollectionViewDelegate, UICollectionViewDataSou
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showDetail", sender: collectionView.cellForItem(at: indexPath))
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        
+        let selectedCell = collectionView.cellForItem(at: indexPath)
+        
+        for cell in collectionView.visibleCells {
+            if cell == selectedCell {
+                cell.heroModifiers = [.zPositionIfMatched(3), ]
+            } else {
+                cell.heroModifiers = []
+            }
+        }
+        
+        return true
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: cellSize, height: cellSize)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        timeSlider.value = Float(scrollView.contentOffset.y) / Float(scrollView.contentSize.height - collection.frame.height)
+        updateSlider()
+    }
+    
+    fileprivate func updateSlider() {
+        timeSlider.value = Float(collection.contentOffset.y) / Float(collection.contentSize.height - collection.frame.height)
     }
 }

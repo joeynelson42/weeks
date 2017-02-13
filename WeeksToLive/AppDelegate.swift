@@ -17,17 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let main = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WeeksNavVC") as! UINavigationController
-        main.setNavigationBarHidden(true, animated: false)
-        
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = main
-        window?.makeKeyAndVisible()
-        
-//        let onboarding = OnboardingViewController()
+//        let main = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WeeksNavVC") as! UINavigationController
+//        main.setNavigationBarHidden(true, animated: false)
+//        
 //        window = UIWindow(frame: UIScreen.main.bounds)
+//        window?.rootViewController = main
 //        window?.makeKeyAndVisible()
-//        window?.rootViewController = onboarding
+        
+        let onboarding = OnboardingViewController()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        window?.rootViewController = onboarding
         
         return true
     }
